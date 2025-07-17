@@ -1,0 +1,46 @@
+<launch>
+  <!-- Scenario argument -->
+  <arg name="scenario" default="latest" />
+
+  <!-- Front left camera -->
+  <node pkg="record_images_mp4" type="video_recorder.py" name="front_left_recording_node" output="screen">
+    <param name="camera_name" value="front_left" />
+    <param name="camera_topic" value="/camera_fl/front_left/arena_camera_fl/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+
+  <!-- Front center camera -->
+  <node name="front_center_recording_node" pkg="record_images_mp4" type="video_recorder.py" output="screen">
+    <param name="camera_name" value="front_center" />
+    <param name="camera_topic" value="/camera_fc/front_center/arena_camera_fc/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+
+  <!-- Front right camera -->
+  <node name="front_right_recording_node" pkg="record_images_mp4" type="video_recorder.py" output="screen">
+    <param name="camera_name" value="front_right" />
+    <param name="camera_topic" value="/camera_fr/front_right/arena_camera_fr/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+
+  <!-- Rear right camera -->
+  <node name="rear_right_recording_node" pkg="record_images_mp4" type="video_recorder.py" output="screen">
+    <param name="camera_name" value="rear_right" />
+    <param name="camera_topic" value="/camera_rr/rear_right/arena_camera_rr/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+
+  <!-- Rear center camera -->
+  <node name="rear_center_recording_node" pkg="record_images_mp4" type="video_recorder.py" output="screen">
+    <param name="camera_name" value="rear_center" />
+    <param name="camera_topic" value="/camera_rc/rear_center/arena_camera_rc/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+
+  <!-- Rear left camera -->
+  <node name="rear_left_recording_node" pkg="record_images_mp4" type="video_recorder.py" output="screen">
+    <param name="camera_name" value="rear_left" />
+    <param name="camera_topic" value="/camera_rl/rear_left/arena_camera_rl/image_raw" />
+    <param name="scenario_filename" value="$(arg scenario)" />
+  </node>
+</launch>
